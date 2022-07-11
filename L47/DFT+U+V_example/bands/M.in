@@ -1,0 +1,99 @@
+&control
+  calculation ='bands'
+  restart_mode ='from_scratch',
+  prefix       ='struc',
+  outdir='./temp'
+  pseudo_dir='./GBRV_PBE'
+  disk_io='low'
+  etot_conv_thr=1.D-7,
+  forc_conv_thr=1.D-6,
+  verbosity    ='high',
+  tprnfor=.t.
+  tstress=.t.
+  nstep=200
+!  tefield = .true.
+!  dipfield = .true.
+
+ /
+&system
+  nosym = .true.,
+  ibrav= 0,
+  nat=  5,
+  ntyp= 3,
+  tot_charge = 0.0
+  ecutwfc =  50,
+  ecutrho = 250,
+  occupations='smearing', smearing='mv', degauss=0.001,
+!  eamp = 0.0
+!  edir = 3
+!  emaxpos = 0.1
+!  eopreg = 0.05
+   nbnd = 26
+   lda_plus_u = .TRUE.
+   lda_plus_u_kind = 2
+   U_projection_type = 'ortho-atomic',
+   Hubbard_V(2,2,1)=2.2609
+   Hubbard_V(3,3,1)=4.0710
+   Hubbard_V(4,4,1)=4.0710
+   Hubbard_V(5,5,1)=4.0710
+   Hubbard_V(2,3,1)=1.5981
+   Hubbard_V(2,4,1)=1.5981
+   Hubbard_V(2,5,1)=1.5981
+!  input_dft='hse', nqx1=2, nqx2=2, nqx3=1,
+!  x_gamma_extrapolation = .true.
+!  vdw_corr = DFT-D3
+!   noncolin = .false., lspinorb = .false.,
+!   nspin = 2,
+!   starting_magnetization(1) = 0.0, starting_magnetization(2) = 0.0,
+!   lda_plus_v = .true., U_projection_type = 'ortho-atomic', ehub_nn_distance = 3.0,
+!   lacbn0 = .true., acbn0_type = 2, ehub_conv_thr = 1.0D-06, ehub_mixing = 0.5,
+!   ehub_l_choice(1,1) = 1, ehub_l_choice(1,2) = 1,  ehub_l_choice(1,3) = 1,
+!   remove_ehub_u(1,1) = 0,
+!   ehub_l_choice(2,1) = 1, ehub_l_choice(2,2) = 1,
+!   remove_ehub_u(2,1) = 0,
+/
+
+&electrons
+    mixing_mode = 'plain'
+    mixing_beta = 0.5,
+    conv_thr =  1.0d-6
+!   Startingpot = 'file'
+!   Startingwfc = 'file'
+/
+
+&IONS
+  upscale           = 100.D0,
+/
+
+&CELL
+  cell_dynamics     = 'bfgs'
+  press_conv_thr    = 0.5d0
+  cell_dofree = 'all'
+/
+
+ATOMIC_SPECIES
+Cs 132.9055 cs_pbe_v1.uspp.F.UPF
+Sn 118.710 sn_pbe_v1.4.uspp.F.UPF
+I 126.9045 i_pbe_v1.uspp.F.UPF
+
+CELL_PARAMETERS (angstrom)
+   6.247850915   0.000000007   0.000000010
+   0.000000007   6.247850266   0.000000017
+   0.000000010   0.000000017   6.247851329
+
+ATOMIC_POSITIONS (crystal)
+Cs       0.500000963   0.499999435   0.499999765
+Sn      -0.000005236   0.000003135   0.000001338
+I        0.500000706  -0.000001040  -0.000000463
+I        0.000001801   0.499999527  -0.000000477
+I        0.000001767  -0.000001058   0.499999837
+
+K_POINTS {crystal_b}
+6
+0.0000000000	0.0000000000	0.0000000000 30  # Gamma
+0.0000000000	0.5000000000	0.0000000000 30  # X
+0.5000000000	0.5000000000	0.0000000000 30  # M
+0.0000000000	0.0000000000	0.0000000000 30  # Gamma
+0.5000000000	0.5000000000	0.5000000000 30  # R
+0.0000000000	0.5000000000	0.0000000000 0   # X
+
