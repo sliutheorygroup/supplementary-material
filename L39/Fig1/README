@@ -1,0 +1,3 @@
+Mg_6 means we changed 6 of 36 Zn to Mg. The composition of Mg is 6/36(~16.67%).
+The structure in each Mg_* fold is the configuration with lowest energy among the five configurations.
+For each Mg_*, we did 'vc-relax' computation firstly, then 'relax' computation, then 'scf' computation, finally 'berry' computation.

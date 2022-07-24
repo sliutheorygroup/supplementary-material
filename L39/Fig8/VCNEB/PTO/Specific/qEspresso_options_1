@@ -1,0 +1,59 @@
+&control
+  calculation ='scf'
+  restart_mode ='from_scratch',
+  prefix       ='ZnO',
+  outdir='./'
+  pseudo_dir='./'
+  disk_io='low'
+!  etot_conv_thr=1.D-7,
+!  forc_conv_thr=1.D-6,
+  verbosity    ='high',
+  tprnfor=.t.
+  tstress=.t.
+  nstep=200
+!  tefield = .true.
+!  dipfield = .true.
+
+ /
+&system
+  nosym = .true.,
+  ibrav= 0,
+  nat= AAAA,
+  ntyp= BBBB,
+  tot_charge = 0.0
+  ecutwfc =  60,
+  ecutrho = 500,
+  occupations='smearing', smearing='mv', degauss=0.001,
+!  eamp = 0.0
+!  edir = 3
+!  emaxpos = 0.1
+!  eopreg = 0.05
+
+!  input_dft='hse', nqx1=2, nqx2=2, nqx3=1,
+!  x_gamma_extrapolation = .true.
+!  vdw_corr = DFT-D3
+/
+
+&electrons
+    mixing_mode = 'plain'
+    mixing_beta = 0.5,
+    conv_thr =  1.0d-9
+!   Startingpot = 'file'
+!   Startingwfc = 'file'
+/
+
+&IONS
+  upscale           = 100.D0,
+/
+
+&CELL
+  cell_dynamics     = 'bfgs'
+  press_conv_thr    = 0.5d0
+  cell_dofree = 'all'
+/
+
+ATOMIC_SPECIES
+Pb 207.2 Pb.upf
+Ti 47.867 Ti.upf
+O 15.999 O.upf
+

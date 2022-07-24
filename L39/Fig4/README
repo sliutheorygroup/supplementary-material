@@ -1,0 +1,8 @@
+Mg_6 means we changed 6 of 36 Zn to Mg. The composition of Mg is 6/36(~16.67%).
+The structure in each Mg_* fold is the configuration with lowest energy among the five configurations.
+
+In 'delta_U_clamp', we clamp the lattice constants to the values of the ground-state ferroelectric phase while fixing atoms at the high-symmetry sites, thus creating a nonpolar phase.
+
+In 'delta_U_relax', we relax the lattice constant along the polarization direction ($c$-axis for PbTiO$_3$) at zero in-plane strain (by fixing $a$-axis) while all the internal atomic coordinates are fixed at the high-symmetry sites.
+
+In 'delta_U_free', one may obtain the lowest-energy cubic phase.

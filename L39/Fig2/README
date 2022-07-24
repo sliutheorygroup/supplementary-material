@@ -1,0 +1,3 @@
+Mg_6 means we changed 6 of 36 Zn to Mg. The composition of Mg is 6/36(~16.67%).
+The structure in each Mg_* fold is the configuration with lowest energy among the five configurations.
+For each Mg_*, 99.5 means we changed cell parameter 'c' to '99.5% * c' ('c' is the lattice constant along the polarization direction ($c$-axis for PbTiO$_3$), this operation represents we applied strain to the system), then 'relax' calculation, then 'scf' calculation, finally 'berry' calculation.
