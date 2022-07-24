@@ -1,0 +1,26 @@
+VCNEB Calcualtion Step 80
+
+-Figure-:  Energy Barrier 
+ ^
+ |                  +  +                     
+ |                        +                  
+ |                                           
+ |               +                           
+ |                           +               
+ |                                           
+ |                                           
+ |            +                 +            
+ |                                           
+ |                                           
+ |                                           
+ |         +                       +         
+ |                                           
+ |      +                             +      
+ |                                       +   
+ |+  +                                      +
+--o--o--o--o--o--o--o--o--o--o--o--o--o--o--o-->
+  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15
+
+      dE (Max_E-Min_E) = 0.2234 eV
+Image- 1 = -13429.8470 eV
+Image-15 = -13429.8470 eV

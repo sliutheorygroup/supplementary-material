@@ -1,0 +1,54 @@
+******************************************
+*      TYPE OF RUN AND SYSTEM            *
+******************************************
+VCNEB : calculationMethod
+
+% numSpecies
+2 2
+% EndNumSpecies
+
+% atomType
+O Zn
+% EndAtomType
+
+0.0   : ExternalPressure
+******************************************
+*        VCNEB options                   *
+******************************************
+101   : vcnebType
+25    : numImages
+500   : numSteps
+1     : optimizerType
+2     : optReadImages
+3     : optRelaxType
+0.05  : dt
+0.02 : ConvThreshold
+************************
+*       NEB options    *
+************************
+0.3   : VarPathLength
+5.0     : K_min
+6.0     : K_max
+0     : optFreezing
+0     : optMethodCIDI
+*****************************************
+*               OUTPUT                  *
+*****************************************
+2     : FormatType  (1: XCRYSDEN format; 2: VASP POSCAR 3: XYZ format DEFAULT: 2)
+5     : PrintStep   (How many VCNEB steps the .mat files are saved,    default: 5)
+*****************************************
+*   DETAILS OF AB INITIO CALCULATIONS   *
+*****************************************
+abinitioCode
+8
+ENDabinit
+
+% KresolStart
+0.1
+% Kresolend
+1   : whichCluster (0: no-job-script, 1: local submission, 2: remote submission)
+25   : numParallelCalcs
+
+% commandExecutable
+srun pw.x -npool 4 <qe.in>& output
+% EndExecutable

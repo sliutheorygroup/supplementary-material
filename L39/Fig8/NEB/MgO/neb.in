@@ -1,0 +1,148 @@
+BEGIN
+BEGIN_PATH_INPUT
+&PATH
+!   restart_mode = 'restart',
+   restart_mode = 'from_scratch',
+   string_method = 'neb',
+   nstep_path = 150,
+   ds = 0.6D0,
+   opt_scheme = "broyden"
+   num_of_images = 17,
+   CI_scheme = "no-CI",
+   path_thr = 0.05D0,
+/
+END_PATH_INPUT
+BEGIN_ENGINE_INPUT
+&control
+  prefix       ='ZnMgO',
+  outdir='./temp'
+  pseudo_dir='./GBRV_PBEsol'
+  disk_io='low'
+!  etot_conv_thr=1.D-7,
+!  forc_conv_thr=1.D-6,
+  verbosity    ='high',
+  tprnfor=.t.
+  tstress=.t.
+  nstep=200
+!  tefield = .true.
+!  dipfield = .true.
+/
+&system
+  nosym = .true.,
+  ibrav= 0,
+  nat=  4,
+  ntyp= 2,
+!  A = 12.290490,
+!  C = 20.0
+  tot_charge = 0.0
+  ecutwfc =  80,
+  ecutrho = 600,
+  occupations='smearing', smearing='mv', degauss=0.001,
+!  eamp = 0.0
+!  edir = 3
+!  emaxpos = 0.1
+!  eopreg = 0.05
+!  input_dft='hse', nqx1=2, nqx2=2, nqx3=1,
+!  x_gamma_extrapolation = .true.
+!  vdw_corr = DFT-D3
+/
+&electrons
+    mixing_mode = 'plain'
+    mixing_beta = 0.5,
+!    conv_thr =  1.0d-8
+!   Startingpot = 'file'
+!   Startingwfc = 'file'
+/
+&IONS
+  upscale           = 100.D0,
+/
+ATOMIC_SPECIES
+O  15.999  O.UPF
+Mg 24.305 Mg.UPF
+
+K_POINTS {automatic}
+4 4 4 0 0 0
+
+!K_POINTS {gamma}
+
+CELL_PARAMETERS (angstrom)
+    3.302000    -0.000000     0.000000
+   -1.651000     2.859622    -0.000000
+    0.000001    -0.000000     5.020599
+BEGIN_POSITIONS
+FIRST_IMAGE
+ATOMIC_POSITIONS (crystal)
+    O      0.6666670000      0.3333330000     -0.0016660000
+    O      0.3333340000      0.6666670000      0.4983340000
+   Mg      0.6666660000      0.3333330000      0.3953660000
+   Mg      0.3333340000      0.6666670000      0.8953660000
+INTERMEDIATE_IMAGE
+ATOMIC_POSITIONS (crystal)
+    O      0.6666667140      0.3333329622      0.0176418260
+    O      0.3333338132      0.6666670510      0.5177038662
+   Mg      0.6666669114      0.3333330882      0.4164697441
+   Mg      0.3333333990      0.6666668986      0.9135523278
+INTERMEDIATE_IMAGE
+ATOMIC_POSITIONS (crystal)
+    O      0.6666671658      0.3333329395      0.0374284156
+    O      0.3333331809      0.6666670346      0.5374172650
+   Mg      0.6666657001      0.3333328570      0.4334470504
+   Mg      0.3333346262      0.6666671690      0.9360763815
+INTERMEDIATE_IMAGE
+ATOMIC_POSITIONS (crystal)
+    O      0.6666878670      0.3333431623      0.0545663389
+    O      0.3333121149      0.6666567306      0.5545537101
+   Mg      0.6666477157      0.3333209513      0.4584973084
+   Mg      0.3333528091      0.6666791558      0.9566037650
+INTERMEDIATE_IMAGE
+ATOMIC_POSITIONS (crystal)
+    O      0.6666895929      0.3333668835      0.0357520006
+    O      0.3333097922      0.6666334963      0.5359954810
+   Mg      0.6666733587      0.3332956809      0.4793717753
+   Mg      0.3333277553      0.6667039392      0.9767650516
+INTERMEDIATE_IMAGE
+ATOMIC_POSITIONS (crystal)
+    O      0.6666827652      0.3333634684      0.0163316772
+    O      0.3333141397      0.6666375525      0.5166260921
+   Mg      0.6666481769      0.3333690579      0.4961836550
+   Mg      0.3333554181      0.6666299211      0.9983210504
+INTERMEDIATE_IMAGE
+ATOMIC_POSITIONS (crystal)
+    O      0.6666822040      0.3333661934     -0.0029995130
+    O      0.3333159385      0.6666343564      0.4973111614
+   Mg      0.6666711792      0.3332752509      0.5181340457
+   Mg      0.3333311786      0.6667241993      1.0148076600
+INTERMEDIATE_IMAGE
+ATOMIC_POSITIONS (crystal)
+    O      0.6666888772      0.3333630544     -0.0222507012
+    O      0.3333110387      0.6666370850      0.4777866617
+   Mg      0.6666585703      0.3333076334      0.5346007314
+   Mg      0.3333420151      0.6666922272      1.0366925187
+INTERMEDIATE_IMAGE
+ATOMIC_POSITIONS (crystal)
+    O      0.6666732511      0.3333458483     -0.0409876890
+    O      0.3333272046      0.6666542519      0.4590696078
+   Mg      0.6666430930      0.3333093167      0.5575387070
+   Mg      0.3333569448      0.6666905831      1.0548657257
+INTERMEDIATE_IMAGE
+ATOMIC_POSITIONS (crystal)
+    O      0.6666668941      0.3333333552     -0.0237584668
+    O      0.3333333032      0.6666666450      0.4762821857
+   Mg      0.6666668535      0.3333327536      0.5798846962
+   Mg      0.3333332765      0.6666672462      1.0778830490
+INTERMEDIATE_IMAGE
+ATOMIC_POSITIONS (crystal)
+    O      0.6666665315      0.3333329300     -0.0040617584
+    O      0.3333335504      0.6666670557      0.4959386326
+   Mg      0.6666665742      0.3333330620      0.5998187860
+   Mg      0.3333335067      0.6666669523      1.0975808313
+LAST_IMAGE
+ATOMIC_POSITIONS (crystal)
+    O      0.6666670000      0.3333330000      0.0153630000
+    O      0.3333330000      0.6666670000      0.5153630000
+   Mg      0.6666660000      0.3333330000      0.6183370000
+   Mg      0.3333340000      0.6666670000      1.1183360000
+END_POSITIONS
+END_ENGINE_INPUT
+END
+

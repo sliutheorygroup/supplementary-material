@@ -1,0 +1,83 @@
+&control
+  calculation ='nscf'
+  restart_mode ='from_scratch',
+  prefix       ='ZnO',
+  outdir='./temp'
+  pseudo_dir='./GBRV_PBEsol'
+  disk_io='low'
+  etot_conv_thr=1.D-7,
+  forc_conv_thr=1.D-6,
+  verbosity    ='high',
+!  tprnfor=.t.
+!  tstress=.t.
+  nstep=200
+nppstr=16
+gdir = 3
+lberry=.true.
+!  tefield = .true.
+!  dipfield = .true.
+
+ /
+&system
+  nosym = .true.,
+  ibrav= 0,
+  nat=  4,
+  ntyp= 2,
+  tot_charge = 0.0
+  ecutwfc =  80,
+  ecutrho = 600,
+!!  occupations='smearing', smearing='mv', degauss=0.001,
+!  eamp = 0.0
+!  edir = 3
+!  emaxpos = 0.1
+!  eopreg = 0.05
+
+!  input_dft='hse', nqx1=2, nqx2=2, nqx3=1,
+!  x_gamma_extrapolation = .true.
+!  vdw_corr = DFT-D3
+!   noncolin = .false., lspinorb = .false.,
+!   nspin = 2,
+!   starting_magnetization(1) = 0.0, starting_magnetization(2) = 0.0,
+!   lda_plus_v = .true., U_projection_type = 'ortho-atomic', ehub_nn_distance = 3.0,
+!   lacbn0 = .true., acbn0_type = 2, ehub_conv_thr = 1.0D-06, ehub_mixing = 0.5,
+!   ehub_l_choice(1,1) = 1, ehub_l_choice(1,2) = 1,  ehub_l_choice(1,3) = 1,
+!   remove_ehub_u(1,1) = 0,
+!   ehub_l_choice(2,1) = 1, ehub_l_choice(2,2) = 1,
+!   remove_ehub_u(2,1) = 0,
+/
+
+&electrons
+    mixing_mode = 'plain'
+    mixing_beta = 0.5,
+    conv_thr =  1.0d-6
+!   Startingpot = 'file'
+!   Startingwfc = 'file'
+/
+
+&IONS
+  upscale           = 100.D0,
+/
+
+&CELL
+  cell_dynamics     = 'bfgs'
+  press_conv_thr    = 0.5d0
+  cell_dofree = 'all'
+/
+
+ATOMIC_SPECIES
+Zn 65.38   zn_pbesol_v1.uspp.F.UPF
+O  15.999  o_pbesol_v1.2.uspp.F.UPF
+
+K_POINTS {automatic}
+8 8 16 0 0 0 
+
+CELL_PARAMETERS (angstrom)
+   3.273305964   0.000000212  -0.000000008
+  -1.636652798   2.834765240   0.000000170
+  -0.000000102   0.000000207   5.077372113
+
+ATOMIC_POSITIONS (crystal)
+O        0.666667000   0.333333706   0.007345864    0   0   0
+O        0.333332906   0.666665677   0.507345756    0   0   0
+Zn       0.666666446   0.333332926   0.406354205    0   0   0
+Zn       0.333333650   0.666667691   0.906354175    0   0   0

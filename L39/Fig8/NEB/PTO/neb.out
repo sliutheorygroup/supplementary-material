@@ -1,0 +1,354 @@
+
+     Program NEB v.6.6 starts on 18Jul2022 at 15:45:38 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI), running on   128 processors
+
+     MPI processes distributed on     2 nodes
+     path-images division:  nimage    =       4
+     K-points division:     npool     =       4
+     R & G space division:  proc/nbgrp/npool/nimage =       8
+     Fft bands division:     nmany     =       1
+
+     parsing_file_name: neb.in
+     Reading input from pw_1.in
+     Reading input from pw_2.in
+     Reading input from pw_3.in
+     Reading input from pw_4.in
+     Reading input from pw_5.in
+     Reading input from pw_6.in
+     Reading input from pw_7.in
+     Reading input from pw_8.in
+     Reading input from pw_9.in
+     Reading input from pw_10.in
+     Reading input from pw_11.in
+     Reading input from pw_12.in
+     Reading input from pw_13.in
+     Reading input from pw_14.in
+     Reading input from pw_15.in
+
+     reading file 'ZnMgO.path'
+
+ 
+     string_method                 =    neb
+     restart_mode                  =    restart
+     opt_scheme                    =    broyden
+     num_of_images                 =    17
+     nstep_path                    =    150
+     CI_scheme                     =    no-CI
+     first_last_opt                =    F
+     use_freezing                  =    F
+     ds                            =    0.6000 a.u.
+     k_max                         =    0.1000 a.u.
+     k_min                         =    0.1000 a.u.
+     suggested k_max               =    1.7135 a.u.
+     suggested k_min               =    1.7135 a.u.
+     path_thr                      =    0.0500 eV / A
+
+     ------------------------------ iteration   3 ------------------------------
+
+     cpu =  0   tcpu =      3.3    self-consistency for image   2
+     Message from routine set_sym_bl:
+     NOTICE: Symmetry group for Bravais lattice is not a group (12) - symmetries are disabled
+     cpu =  0   tcpu =     13.9    self-consistency for image   6
+     Message from routine set_sym_bl:
+     NOTICE: Symmetry group for Bravais lattice is not a group (12) - symmetries are disabled
+     cpu =  0   tcpu =     25.7    self-consistency for image  10
+     Message from routine set_sym_bl:
+     NOTICE: Symmetry group for Bravais lattice is not a group (12) - symmetries are disabled
+     cpu =  0   tcpu =     36.6    self-consistency for image  14
+     Message from routine set_sym_bl:
+     NOTICE: Symmetry group for Bravais lattice is not a group (12) - symmetries are disabled
+
+     activation energy (->) =   0.339273 eV
+     activation energy (<-) =   0.339276 eV
+
+     image        energy (eV)        error (eV/A)        frozen
+
+         1      -5172.2815188            0.023656            T
+         2      -5172.2689023            0.026098            F
+         3      -5172.2353248            0.029309            F
+         4      -5172.1893955            0.019296            F
+         5      -5172.1384724            0.028806            F
+         6      -5172.0842323            0.044623            F
+         7      -5172.0227925            0.056165            F
+         8      -5171.9650474            0.066401            F
+         9      -5171.9422458            0.009953            F
+        10      -5171.9680857            0.087714            F
+        11      -5172.0255915            0.061829            F
+        12      -5172.0850590            0.097780            F
+        13      -5172.1384925            0.032518            F
+        14      -5172.1893117            0.032737            F
+        15      -5172.2352441            0.037318            F
+        16      -5172.2688659            0.026997            F
+        17      -5172.2815216            0.021584            T
+
+     path length          =  2.126 bohr
+     inter-image distance =  0.133 bohr
+
+     ------------------------------ iteration   4 ------------------------------
+
+     cpu =  0   tcpu =     51.1    self-consistency for image   2
+     Message from routine set_sym_bl:
+     NOTICE: Symmetry group for Bravais lattice is not a group (12) - symmetries are disabled
+     cpu =  0   tcpu =     58.4    self-consistency for image   6
+     Message from routine set_sym_bl:
+     NOTICE: Symmetry group for Bravais lattice is not a group (12) - symmetries are disabled
+     cpu =  0   tcpu =     69.8    self-consistency for image  10
+     Message from routine set_sym_bl:
+     NOTICE: Symmetry group for Bravais lattice is not a group (12) - symmetries are disabled
+     cpu =  0   tcpu =     83.0    self-consistency for image  14
+     Message from routine set_sym_bl:
+     NOTICE: Symmetry group for Bravais lattice is not a group (12) - symmetries are disabled
+
+     activation energy (->) =   0.339139 eV
+     activation energy (<-) =   0.339141 eV
+
+     image        energy (eV)        error (eV/A)        frozen
+
+         1      -5172.2815188            0.023656            T
+         2      -5172.2689257            0.026130            F
+         3      -5172.2353347            0.022105            F
+         4      -5172.1894083            0.017159            F
+         5      -5172.1384938            0.026178            F
+         6      -5172.0842974            0.060353            F
+         7      -5172.0227851            0.086355            F
+         8      -5171.9650804            0.065269            F
+         9      -5171.9423801            0.040867            F
+        10      -5171.9680947            0.064276            F
+        11      -5172.0256353            0.030603            F
+        12      -5172.0851518            0.089475            F
+        13      -5172.1385112            0.034167            F
+        14      -5172.1893209            0.032273            F
+        15      -5172.2352515            0.036061            F
+        16      -5172.2688844            0.028000            F
+        17      -5172.2815216            0.021584            T
+
+     path length          =  2.128 bohr
+     inter-image distance =  0.133 bohr
+
+     ------------------------------ iteration   5 ------------------------------
+
+     cpu =  0   tcpu =     95.3    self-consistency for image   2
+     Message from routine set_sym_bl:
+     NOTICE: Symmetry group for Bravais lattice is not a group (12) - symmetries are disabled
+     cpu =  0   tcpu =    105.4    self-consistency for image   6
+     Message from routine set_sym_bl:
+     NOTICE: Symmetry group for Bravais lattice is not a group (12) - symmetries are disabled
+     cpu =  0   tcpu =    121.4    self-consistency for image  10
+     Message from routine set_sym_bl:
+     NOTICE: Symmetry group for Bravais lattice is not a group (12) - symmetries are disabled
+     cpu =  0   tcpu =    141.0    self-consistency for image  14
+     Message from routine set_sym_bl:
+     NOTICE: Symmetry group for Bravais lattice is not a group (12) - symmetries are disabled
+
+     activation energy (->) =   0.339271 eV
+     activation energy (<-) =   0.339273 eV
+
+     image        energy (eV)        error (eV/A)        frozen
+
+         1      -5172.2815188            0.023656            T
+         2      -5172.2689861            0.027277            F
+         3      -5172.2353568            0.022947            F
+         4      -5172.1894394            0.014754            F
+         5      -5172.1385424            0.036047            F
+         6      -5172.0844615            0.049988            F
+         7      -5172.0227823            0.071786            F
+         8      -5171.9651606            0.003747            F
+         9      -5171.9422482            0.016691            F
+        10      -5171.9681029            0.076851            F
+        11      -5172.0257441            0.018099            F
+        12      -5172.0853569            0.081087            F
+        13      -5172.1385429            0.033090            F
+        14      -5172.1893364            0.033081            F
+        15      -5172.2352678            0.042562            F
+        16      -5172.2689388            0.023767            F
+        17      -5172.2815216            0.021584            T
+
+     path length          =  2.135 bohr
+     inter-image distance =  0.133 bohr
+
+     ------------------------------ iteration   6 ------------------------------
+
+     cpu =  0   tcpu =    153.0    self-consistency for image   2
+     Message from routine set_sym_bl:
+     NOTICE: Symmetry group for Bravais lattice is not a group (12) - symmetries are disabled
+     cpu =  0   tcpu =    164.7    self-consistency for image   6
+     Message from routine set_sym_bl:
+     NOTICE: Symmetry group for Bravais lattice is not a group (12) - symmetries are disabled
+     cpu =  0   tcpu =    181.7    self-consistency for image  10
+     Message from routine set_sym_bl:
+     NOTICE: Symmetry group for Bravais lattice is not a group (12) - symmetries are disabled
+     cpu =  0   tcpu =    200.0    self-consistency for image  14
+     Message from routine set_sym_bl:
+     NOTICE: Symmetry group for Bravais lattice is not a group (12) - symmetries are disabled
+
+     activation energy (->) =   0.339270 eV
+     activation energy (<-) =   0.339273 eV
+
+     image        energy (eV)        error (eV/A)        frozen
+
+         1      -5172.2815188            0.023656            T
+         2      -5172.2691463            0.031814            F
+         3      -5172.2354133            0.026242            F
+         4      -5172.1895374            0.027877            F
+         5      -5172.1386361            0.033024            F
+         6      -5172.0847048            0.033190            F
+         7      -5172.0227187            0.043171            F
+         8      -5171.9653326            0.009536            F
+         9      -5171.9422486            0.005121            F
+        10      -5171.9680909            0.085370            F
+        11      -5172.0259909            0.157471            F
+        12      -5172.0855585            0.058555            F
+        13      -5172.1385436            0.042957            F
+        14      -5172.1893664            0.065251            F
+        15      -5172.2353007            0.049698            F
+        16      -5172.2690458            0.057450            F
+        17      -5172.2815216            0.021584            T
+
+     path length          =  2.161 bohr
+     inter-image distance =  0.135 bohr
+
+     ------------------------------ iteration   7 ------------------------------
+
+     cpu =  0   tcpu =    221.1    self-consistency for image   2
+     Message from routine set_sym_bl:
+     NOTICE: Symmetry group for Bravais lattice is not a group (12) - symmetries are disabled
+     cpu =  0   tcpu =    231.5    self-consistency for image   6
+     Message from routine set_sym_bl:
+     NOTICE: Symmetry group for Bravais lattice is not a group (12) - symmetries are disabled
+     cpu =  0   tcpu =    248.2    self-consistency for image  10
+     Message from routine set_sym_bl:
+     NOTICE: Symmetry group for Bravais lattice is not a group (12) - symmetries are disabled
+     cpu =  0   tcpu =    268.8    self-consistency for image  14
+     Message from routine set_sym_bl:
+     NOTICE: Symmetry group for Bravais lattice is not a group (12) - symmetries are disabled
+
+     activation energy (->) =   0.339268 eV
+     activation energy (<-) =   0.339270 eV
+
+     image        energy (eV)        error (eV/A)        frozen
+
+         1      -5172.2815188            0.023656            T
+         2      -5172.2690905            0.062124            F
+         3      -5172.2353974            0.054185            F
+         4      -5172.1895005            0.029171            F
+         5      -5172.1385977            0.018680            F
+         6      -5172.0846571            0.013115            F
+         7      -5172.0227785            0.013669            F
+         8      -5171.9652684            0.082109            F
+         9      -5171.9422512            0.013086            F
+        10      -5171.9681174            0.005508            F
+        11      -5172.0259978            0.075039            F
+        12      -5172.0855650            0.026056            F
+        13      -5172.1385435            0.012321            F
+        14      -5172.1893655            0.049769            F
+        15      -5172.2353005            0.036966            F
+        16      -5172.2690217            0.066356            F
+        17      -5172.2815216            0.021584            T
+
+     path length          =  2.150 bohr
+     inter-image distance =  0.134 bohr
+
+     ------------------------------ iteration   8 ------------------------------
+
+     cpu =  0   tcpu =    283.6    self-consistency for image   2
+     Message from routine set_sym_bl:
+     NOTICE: Symmetry group for Bravais lattice is not a group (12) - symmetries are disabled
+     cpu =  0   tcpu =    293.5    self-consistency for image   6
+     Message from routine set_sym_bl:
+     NOTICE: Symmetry group for Bravais lattice is not a group (12) - symmetries are disabled
+     cpu =  0   tcpu =    308.3    self-consistency for image  10
+     Message from routine set_sym_bl:
+     NOTICE: Symmetry group for Bravais lattice is not a group (12) - symmetries are disabled
+     cpu =  0   tcpu =    320.6    self-consistency for image  14
+     Message from routine set_sym_bl:
+     NOTICE: Symmetry group for Bravais lattice is not a group (12) - symmetries are disabled
+
+     activation energy (->) =   0.339267 eV
+     activation energy (<-) =   0.339269 eV
+
+     image        energy (eV)        error (eV/A)        frozen
+
+         1      -5172.2815188            0.023656            T
+         2      -5172.2690923            0.025239            F
+         3      -5172.2354047            0.028144            F
+         4      -5172.1894870            0.026511            F
+         5      -5172.1385672            0.028017            F
+         6      -5172.0846313            0.011108            F
+         7      -5172.0228051            0.009611            F
+         8      -5171.9652592            0.065254            F
+         9      -5171.9422522            0.015601            F
+        10      -5171.9681093            0.055546            F
+        11      -5172.0260267            0.054305            F
+        12      -5172.0855411            0.042064            F
+        13      -5172.1385190            0.011026            F
+        14      -5172.1893665            0.038855            F
+        15      -5172.2353022            0.032055            F
+        16      -5172.2690293            0.053534            F
+        17      -5172.2815216            0.021584            T
+
+     path length          =  2.146 bohr
+     inter-image distance =  0.134 bohr
+
+     ------------------------------ iteration   9 ------------------------------
+
+     cpu =  0   tcpu =    333.1    self-consistency for image   2
+     Message from routine set_sym_bl:
+     NOTICE: Symmetry group for Bravais lattice is not a group (12) - symmetries are disabled
+     cpu =  0   tcpu =    341.6    self-consistency for image   6
+     Message from routine set_sym_bl:
+     NOTICE: Symmetry group for Bravais lattice is not a group (12) - symmetries are disabled
+     cpu =  0   tcpu =    352.3    self-consistency for image  10
+     Message from routine set_sym_bl:
+     NOTICE: Symmetry group for Bravais lattice is not a group (12) - symmetries are disabled
+     cpu =  0   tcpu =    363.0    self-consistency for image  14
+     Message from routine set_sym_bl:
+     NOTICE: Symmetry group for Bravais lattice is not a group (12) - symmetries are disabled
+
+     activation energy (->) =   0.339272 eV
+     activation energy (<-) =   0.339275 eV
+
+     image        energy (eV)        error (eV/A)        frozen
+
+         1      -5172.2815188            0.023656            T
+         2      -5172.2690988            0.035605            F
+         3      -5172.2354097            0.030559            F
+         4      -5172.1894821            0.022885            F
+         5      -5172.1385413            0.019780            F
+         6      -5172.0846151            0.027462            F
+         7      -5172.0228314            0.029718            F
+         8      -5171.9652585            0.007840            F
+         9      -5171.9422466            0.049466            F
+        10      -5171.9681110            0.048369            F
+        11      -5172.0260815            0.031157            F
+        12      -5172.0855396            0.030993            F
+        13      -5172.1384865            0.010940            F
+        14      -5172.1893660            0.024136            F
+        15      -5172.2353044            0.026730            F
+        16      -5172.2690481            0.039933            F
+        17      -5172.2815216            0.021584            T
+
+     path length          =  2.145 bohr
+     inter-image distance =  0.134 bohr
+
+     ---------------------------------------------------------------------------
+
+
+     neb: convergence achieved in   9 iterations
+ 
+     NEB          :   5m25.31s CPU   6m20.65s WALL
+
+ 
+   This run was terminated on:  15:51:58  18Jul2022            
+
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=

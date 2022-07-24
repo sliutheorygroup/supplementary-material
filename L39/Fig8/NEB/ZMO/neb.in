@@ -1,0 +1,88 @@
+BEGIN
+BEGIN_PATH_INPUT
+&PATH
+!   restart_mode = 'restart',
+   restart_mode = 'from_scratch',
+   string_method = 'neb',
+   nstep_path = 150,
+   ds = 0.6D0,
+   opt_scheme = "broyden"
+   num_of_images = 17,
+   CI_scheme = "no-CI",
+   path_thr = 0.05D0,
+/
+END_PATH_INPUT
+BEGIN_ENGINE_INPUT
+&control
+  prefix       ='ZnMgO',
+  outdir='./temp'
+  pseudo_dir='./GBRV_PBEsol'
+  disk_io='low'
+!  etot_conv_thr=1.D-7,
+!  forc_conv_thr=1.D-6,
+  verbosity    ='high',
+  tprnfor=.t.
+  tstress=.t.
+  nstep=200
+!  tefield = .true.
+!  dipfield = .true.
+/
+&system
+  nosym = .true.,
+  ibrav= 0,
+  nat=  4,
+  ntyp= 3,
+!  A = 12.290490,
+!  C = 20.0
+  tot_charge = 0.0
+  ecutwfc =  80,
+  ecutrho = 600,
+  occupations='smearing', smearing='mv', degauss=0.001,
+!  eamp = 0.0
+!  edir = 3
+!  emaxpos = 0.1
+!  eopreg = 0.05
+!  input_dft='hse', nqx1=2, nqx2=2, nqx3=1,
+!  x_gamma_extrapolation = .true.
+!  vdw_corr = DFT-D3
+/
+&electrons
+    mixing_mode = 'plain'
+    mixing_beta = 0.5,
+!    conv_thr =  1.0d-8
+!   Startingpot = 'file'
+!   Startingwfc = 'file'
+/
+&IONS
+  upscale           = 100.D0,
+/
+ATOMIC_SPECIES
+O  15.999  O.UPF
+Zn 65.38 Zn.UPF
+Mg 24.305 Mg.UPF
+
+K_POINTS {automatic}
+4 4 4 0 0 0
+!K_POINTS {gamma}
+
+CELL_PARAMETERS (angstrom)                               
+   3.269831   0.000000   0.000000                  
+  -1.634915   2.831756  -0.000002                  
+   0.000001  -0.000005   5.118282                  
+BEGIN_POSITIONS                                    
+FIRST_IMAGE                                        
+ATOMIC_POSITIONS (crystal)                        
+O       0.666668   0.333335   0.013103            
+O       0.333331   0.666663   0.508339            
+Zn      0.666666   0.333333   0.626325            
+Mg      0.333334   0.666667   1.119631            
+LAST_IMAGE                                        
+ATOMIC_POSITIONS (crystal)                        
+O       0.666667   0.333333   0.000556            
+O       0.333334   0.666668   0.505365            
+Zn      0.666666   0.333333   0.387378            
+Mg      0.333333   0.666665   0.894099            
+END_POSITIONS                                      
+END_ENGINE_INPUT                                   
+END          
+                                      
