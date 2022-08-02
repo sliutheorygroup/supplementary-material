@@ -1,0 +1,14 @@
+phonon
+&inputph
+ tr2_ph=1.0d-15
+ prefix='MgO',
+ epsil=.true.,
+ ldisp=.true.
+ ! The ordering should be consistent with ATOMIC_SPECIES block in scf
+ amass(1)=24.305
+ amass(2)=15.999
+ outdir='./temp'
+ fildyn='MgO.dynG'
+ nq1=2,nq2=2,nq3=2
+/
+
