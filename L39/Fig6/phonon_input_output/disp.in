@@ -1,0 +1,19 @@
+&input
+ asr='crystal',
+ amass(1)=24.305
+ amass(2)=15.999
+ flfrc='MgO.222.fc'
+ flfrq='MgO.disp.freq'
+ q_in_band_form=.true.
+ q_in_cryst_coord=.true.
+/
+8
+0 0 0 30
+0.5 0 0 30
+0.33333 0.33333 0 30
+0 0 0 30
+0 0 0.5 30
+0.5 0 0.5 30
+0.33333 0.33333 0.5 30
+0 0 0.5 1
+
