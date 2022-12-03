@@ -1,0 +1,8 @@
+q2r
+&input
+ fildyn='Ga2Se3.dyn'
+ zasr='crystal',
+ flfrc='Ga2Se3.1121.fc'
+! loto_2d = .true. 
+/
+
