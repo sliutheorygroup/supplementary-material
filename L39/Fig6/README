@@ -1,0 +1,2 @@
+Calculations are in "phonon_input_output"
+pw.x -> ph.x -> q2r.in -> matdyn.x
