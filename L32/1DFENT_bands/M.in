@@ -1,0 +1,89 @@
+&control
+  calculation ='bands'
+  restart_mode ='from_scratch',
+  prefix       ='NR',
+  outdir='./temp'
+  pseudo_dir='./GBRV_PBEsol'
+  disk_io='low'
+  etot_conv_thr=1.D-7,
+  forc_conv_thr=1.D-6,
+  verbosity    ='high',
+  tprnfor=.t.
+  tstress=.t.
+  nstep=200
+!  tefield = .true.
+!  dipfield = .true.
+
+ /
+&system
+  nosym = .false.,
+  ibrav= 0,
+  nat=  15,
+  ntyp= 2,
+  tot_charge = 0.0
+  ecutwfc =  80,
+  ecutrho = 600,
+  occupations='smearing', smearing='mv', degauss=0.001,
+!  eamp = 0.0
+!  edir = 3
+!  emaxpos = 0.1
+!  eopreg = 0.05
+   nbnd = 90
+!  input_dft='hse', nqx1=2, nqx2=2, nqx3=1,
+!  x_gamma_extrapolation = .true.
+!  vdw_corr = DFT-D3
+/
+
+&electrons
+    mixing_mode = 'plain'
+    mixing_beta = 0.1,
+    conv_thr =  1.0d-10
+!   Startingpot = 'file'
+!   Startingwfc = 'file'
+/
+
+&IONS
+  upscale           = 100.D0,
+/
+
+&CELL
+  cell_dynamics     = 'bfgs'
+  press_conv_thr    = 0.5d0
+  cell_dofree = 'y'
+/
+
+ATOMIC_SPECIES
+Ga  69.723  ga_pbesol_v1.4.uspp.F.UPF
+Se  78.971  se_pbesol_v1.uspp.F.UPF
+
+!K_POINTS {automatic}
+!1 8 1 0 0 0 
+
+CELL_PARAMETERS (angstrom)
+  20.000000000   0.000000000   0.000000000
+   0.000000000   6.157979000   0.000000000
+   0.000000000   0.000000000  20.000000000
+
+ATOMIC_POSITIONS (crystal)
+Ga       0.524834646   0.096954881   0.647937794
+Ga       0.432808390   0.844527942   0.443083931
+Ga       0.616889685   0.844528190   0.443096944
+Ga       0.440853611   0.505540248   0.594186253
+Ga       0.608823220   0.505540657   0.594198256
+Ga       0.524851488   0.284715455   0.408044955
+Se       0.366778037   0.719103739   0.528220448
+Se       0.682907956   0.719104830   0.528242940
+Se       0.524833730   0.710734953   0.659392449
+Se       0.524853309   0.671674785   0.382760180
+Se       0.524843044   0.285827212   0.530107833
+Se       0.415039921   0.226990505   0.670780301
+Se       0.634626106   0.226990706   0.670795887
+Se       0.416315836   0.156908058   0.380028375
+Se       0.633391021   0.156907841   0.380043460
+
+
+K_POINTS {crystal_b}
+2             # Number of supplied special k-points
+0.0 0.0 0.0 50 # Gamma
+0.0 0.5 0.0 0 # Y
+

@@ -1,0 +1,15 @@
+Gamma Phonon
+&inputph
+ tr2_ph=1.0d-16
+ prefix='NR',
+ ldisp=.true.
+! epsil=.true.,
+ ! The ordering should be consistent with ATOMIC_SPECIES block in scf
+ amass(1)=69.723
+ amass(2)=78.791
+ outdir='./temp'
+ fildyn='GaAs.dynG'
+nq1=1, nq2=12, nq3=1
+/
+
+

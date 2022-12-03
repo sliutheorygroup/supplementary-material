@@ -1,0 +1,82 @@
+&control
+  calculation ='scf'
+  restart_mode ='from_scratch',
+  prefix       ='NR',
+  outdir='./temp'
+  pseudo_dir='./GBRV_PBEsol'
+  disk_io='low'
+  etot_conv_thr=1.D-7,
+  forc_conv_thr=1.D-6,
+  verbosity    ='high',
+  tprnfor=.t.
+  tstress=.t.
+  nstep=200
+!  tefield = .true.
+!  dipfield = .true.
+
+ /
+&system
+  nosym = .false.,
+  ibrav= 0,
+  nat=  15,
+  ntyp= 2,
+  tot_charge = 0.0
+  ecutwfc =  50,
+  ecutrho = 250,
+!  occupations='smearing', smearing='mv', degauss=0.001,
+!  eamp = 0.0
+!  edir = 3
+!  emaxpos = 0.1
+!  eopreg = 0.05
+
+!  input_dft='hse', nqx1=2, nqx2=2, nqx3=1,
+!  x_gamma_extrapolation = .true.
+!  vdw_corr = DFT-D3
+/
+
+&electrons
+    mixing_mode = 'plain'
+    mixing_beta = 0.5,
+    conv_thr =  1.0d-10
+!   Startingpot = 'file'
+!   Startingwfc = 'file'
+/
+
+&IONS
+  upscale           = 100.D0,
+/
+
+&CELL
+  cell_dynamics     = 'bfgs'
+  press_conv_thr    = 0.5d0
+  cell_dofree = 'y'
+/
+
+ATOMIC_SPECIES
+Ga  69.723  ga_pbesol_v1.4.uspp.F.UPF
+Se  78.971  se_pbesol_v1.uspp.F.UPF
+
+K_POINTS {automatic}
+1 8 1 0 0 0 
+
+CELL_PARAMETERS (angstrom)
+  20.000000000   0.000000000   0.000000000
+   0.000000000   6.160271525   0.000000000
+   0.000000000   0.000000000  20.000000000
+
+ATOMIC_POSITIONS (crystal)
+Ga       0.524834728   0.097152081   0.647901215
+Ga       0.432825746   0.844257315   0.443055279
+Ga       0.616872239   0.844257477   0.443068209
+Ga       0.440859743   0.505725927   0.594207089
+Ga       0.608816724   0.505725704   0.594219124
+Ga       0.524851428   0.284493893   0.408076448
+Se       0.366784523   0.719135923   0.528215741
+Se       0.682900581   0.719136640   0.528238249
+Se       0.524834006   0.711044375   0.659372164
+Se       0.524853576   0.671317750   0.382739791
+Se       0.524843111   0.286086118   0.530132867
+Se       0.415060072   0.227267090   0.670799423
+Se       0.634606567   0.227267085   0.670814821
+Se       0.416342815   0.156591245   0.380032153
+Se       0.633364142   0.156591378   0.380047429
